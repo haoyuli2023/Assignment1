@@ -1,7 +1,6 @@
 
 import pandas as pd
 
-
 if __name__ == '__main__':
     import argparse
 
@@ -27,3 +26,5 @@ merged_data = merged_data[~merged_data['job'].str.contains('insurance|Insurance'
 cleaned = merged_data[['respondent_id', 'name', 'address', 'phone', 'job', 'company', 'birthdate']]
 
 cleaned.to_csv(args.output_file, index=False)
+
+print(f"the shape of output file: {cleaned.shape}")
